@@ -1,6 +1,6 @@
 ---
 title: The Mistake Every Developer Makes (And No One Talks About)
-image: https://www.shutterstock.com/image-photo/angry-office-worker-sitting-desk-shouting-2120056355
+image: https://blogs.innova.co.ke/assets/images/mistake.png
 tags: [Programming, Tutorial, Productivity]
 categories: [Career]
 ---
