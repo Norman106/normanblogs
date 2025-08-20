@@ -6,6 +6,7 @@ categories: [Software Development, Career Advice]
 image: assets/images/cracked-developer-cover.jpg
 tags: [programming, startups, development, productivity]
 description: A guide to becoming an exceptional developer, based on observations of top-tier devs at early-stage startups.
+image: https://images.unsplash.com/photo-1565687981296-535f09db714e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 # How to Be a Cracked Developer: Lessons from the Best

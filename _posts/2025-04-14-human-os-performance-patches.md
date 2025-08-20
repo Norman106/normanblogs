@@ -5,6 +5,7 @@ author: "Norman Fwamba"
 categories: [Performance, Personal Development]
 tags: [Self-Improvement, Productivity, Engineering, Systems Thinking]
 description: "Small steps, massive impact: 18 high-performance habits every engineer can adopt to build a resilient, long-game lifestyle."
+image: https://images.unsplash.com/photo-1565120130276-dfbd9a7a3ad7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 
 ---
 

@@ -5,6 +5,7 @@ author: "Norman Fwamba"
 categories: [Engineering Teams, Productivity, Leadership]
 tags: [High-Output, Collaboration, Ownership, Agile, Process, Performance]
 description: "An in-depth guide to the fundamental principles that empower engineering teams to maximize productivity, foster strong collaboration, and consistently deliver high-quality software at scale."
+image: https://plus.unsplash.com/premium_photo-1747889461984-ecf42eab7d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 

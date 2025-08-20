@@ -5,6 +5,7 @@ author: "Norman Fwamba"
 categories: [Software Development, Personal Optimization]
 tags: [Procrastination, Technical Debt, Documentation, Developer Habits, Productivity]
 description: "A candid reflection on how small shifts in visibility and urgency—like doing it 'now-ish'—can drastically improve how developers handle documentation, technical debt, and personal growth."
+image: https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 #  Why Developers Should “Do It Now-ish”

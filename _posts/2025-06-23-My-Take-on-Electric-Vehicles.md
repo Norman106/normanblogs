@@ -5,6 +5,7 @@ author: "Norman Fwamba"
 categories: [Technology, Sustainability, Innovation]
 tags: [Electric Vehicles, Clean Energy, Battery Technology, Smart Mobility, Africa, Future Transport]
 description: "A personal reflection on the electric vehicle revolution — exploring its promises, pitfalls, and the role Africa can play in shaping a cleaner, smarter transport future."
+image: https://images.unsplash.com/photo-1615829386703-e2bb66a7cb7d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 **Title: My Take on Electric Vehicles: Beyond the Hype, Into the Future**

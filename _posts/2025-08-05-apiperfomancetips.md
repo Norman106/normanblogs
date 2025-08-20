@@ -3,6 +3,7 @@ title: Tips for Improving API Performance in ASP.NET Core
 image: api_performance_tips_banner.png
 tags: [aspnet, dotnet, performance, webperf]
 categories: [Programming, Backend]
+image: https://images.unsplash.com/photo-1540206911447-40b1545a8b76?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 # Tips for Improving API Performance in ASP.NET Core

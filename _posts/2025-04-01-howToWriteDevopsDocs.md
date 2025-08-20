@@ -5,6 +5,7 @@ author: "Norman Fwamba"
 categories: [DevOps, Technical Writing]
 tags: [DevOps, Documentation, Tech Writing, Software Engineering]
 description: "A guide to writing clear, actionable, and maintainable documentation that truly helps your team."
+image: https://images.unsplash.com/photo-1503252947848-7338d3f92f31?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 # **Knowledge Transfer That Works: Documentation Strategies for Scaling Teams**

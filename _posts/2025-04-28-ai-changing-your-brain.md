@@ -5,6 +5,7 @@ author: "Norman Fwamba"
 categories: [AI, Personal Development]
 tags: [Cognitive Science, Technology, Self-Improvement, Critical Thinking]
 description: "A deep look at how constant interaction with AI is rewiring the way we think, remember, and solve problems—often without us realizing it."
+image: https://plus.unsplash.com/premium_photo-1676637656166-cb7b3a43b81a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 # AI Is Changing Your Brain (Like It or Not)
