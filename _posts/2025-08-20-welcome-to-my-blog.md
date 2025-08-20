@@ -5,7 +5,7 @@ date: 2025-08-20 09:00:00 +0300
 categories: [General, Welcome]
 tags: [welcome, introduction, getting started]
 author: Norman Khisa Fwamba
-image: /assets/img/posts/welcome.jpg  # You can add a header image here
+
 ---
 
 # Welcome to My Blog!
