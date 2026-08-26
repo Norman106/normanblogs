@@ -50,17 +50,16 @@ google_site_verification: # fill in to your verification string
 
 google_analytics:
   id: # fill in your Google Analytics ID
-
-# Prefer color scheme setting.
-#
-# Note: Keep empty will follow the system prefer color by default,
-# and there will be a toggle to switch the theme between dark and light
-# on the bottom left of the sidebar.
-#
-# Available options:
-#
-#     light  - Use the light color scheme
-#     dark   - Use the dark color scheme
+    # Prefer color scheme setting.
+    #
+    # Note: Keep empty will follow the system prefer color by default,
+    # and there will be a toggle to switch the theme between dark and light
+    # on the bottom left of the sidebar.
+    #
+    # Available options:
+    #
+    light  - Use the light color scheme
+    dark   - Use the dark color scheme
 #
 theme_mode: [dark]
 
@@ -72,7 +71,7 @@ theme_mode: [dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://media.licdn.com/dms/image/v2/D4D03AQFuLQQle_0feg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704792968524?e=1758758400&v=beta&t=_YAcOWvwfV6c2Ctw9PBsLX_7FxieUT7Yv8GrQeJfTjI
+avatar: https://kommodo.ai/i/YdiEMAypNwv2oHQraR6U
 # boolean type, the global switch for TOC in posts.
 toc: true
 

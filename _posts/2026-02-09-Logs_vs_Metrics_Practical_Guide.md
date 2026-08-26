@@ -1,26 +1,21 @@
 ---
 layout: post
-title: "Logs vs Metrics: A Practical Guide for Engineers"
+title: "Logs & Metrics: What Engineers Need to Know"
 author: "Norman Fwamba"
 categories: [Observability, Software Engineering, DevOps]
 tags: [Logs, Metrics, Monitoring, Observability, Prometheus, Grafana, System Reliability]
 description: "A practical, engineer-focused guide that explains the differences between logs and metrics, when to use each, and how they work together to build reliable, observable systems."
-image: "https://miro.medium.com/v2/resize:fit:1400/0*9NpLuMwnX30r6vDx"
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYHZY-IQl8zSapNEQ-HbfWVHjJcDKwgwN2WA&s"
 ---
-![Code Refactoring](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYHZY-IQl8zSapNEQ-HbfWVHjJcDKwgwN2WA&s)
-# Logs vs Metrics: A Practical Guide for Engineers
 
+# Logs & Metrics: What Engineers Need to Know
+## The Quick Distinction
 Metrics tell you something is wrong. Logs tell you what is wrong. A practical guide on when to use each for effective observability.
 
 
 
 I've lost count of how many times I've seen teams debate whether to add more logging or better metrics. The answer is almost always "both, but for different reasons." Here's how I think about it after years of debugging production systems.
 
-## The Quick Distinction
-
-Metrics tell you something is wrong. Logs tell you what is wrong.
-
-That's the one-liner, but it glosses over the nuances that matter when you're building observability into a real system. Let's break it down.
 
 ## Logs: Your System's Black Box
 
@@ -156,5 +151,5 @@ Don't think of this as logs versus metrics. Think of it as logs **and** metrics,
 Together, they give you the full picture.
 
 The goal isn't perfect observability - it's observability that's good enough to debug issues quickly and confidently. Start simple, measure what matters, and expand based on the gaps you actually encounter.
-```
+
 
