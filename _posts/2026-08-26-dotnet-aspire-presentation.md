@@ -4,7 +4,7 @@ title: ".NET Aspire: Building Cloud-Native Distributed Applications"
 author: "Norman Fwamba"
 categories: [.NET, Cloud Native, Architecture]
 tags: [.NET Aspire, Microservices, RabbitMQ, PostgreSQL, Redis, Polly, Observability, CQRS, Docker, Distributed Systems]
-description: "A comprehensive team workshop guide and architecture walkthrough on building cloud-native distributed applications with .NET Aspire, CQRS, RabbitMQ messaging, and Polly resilience."
+description: "A comprehensive presentation guide and architecture walkthrough on building cloud-native distributed applications with .NET Aspire, CQRS, RabbitMQ messaging, and Polly resilience."
 image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop"
 mermaid: true
 ---
@@ -15,13 +15,13 @@ mermaid: true
 
 ---
 
-*Team Workshop | August 2026*
+*Norman Fwamba | August 2026*
 
 ---
 
 ---
 
-# What We'll Cover Today
+# What I'll Cover Today
 
 | # | Topic | What You'll Learn |
 |---|-------|-------------------|
@@ -33,7 +33,7 @@ mermaid: true
 | 6 | **Resilience & Health Checks** | Polly retry, circuit breakers, chaos engineering |
 | 7 | **LIVE DEMO 2** | Break the API on purpose and watch it heal itself |
 | 8 | **Comparisons** | Aspire vs Docker Compose vs Kubernetes vs Dapr |
-| 9 | **Lessons & Q&A** | Gotchas, best practices, and your questions |
+| 9 | **Lessons & Q&A** | Gotchas, best practices, and Q&A |
 
 ---
 
@@ -84,7 +84,7 @@ Step 7:  If port 5432 is taken, update 3 configuration files.
 
 ---
 
-## What We Actually Want
+## What I Actually Wanted
 
 ```
 [OK]  ONE command to start everything
@@ -220,7 +220,7 @@ builder.AddServiceDefaults();
 
 ---
 
-# Part 3: The AppHost — Our Orchestrator
+# Part 3: The AppHost — The Orchestrator
 
 ---
 
@@ -345,15 +345,15 @@ sequenceDiagram
 | **201 Created** | "The resource **has been** created." | Synchronous — the database write is done before the response |
 | **202 Accepted** | "Your request **has been accepted** for processing." | Asynchronous — processing happens later, result isn't ready yet |
 
-In our architecture, when the API responds, the investor **does not exist in the database yet**.
+In this architecture, when the API responds, the investor **does not exist in the database yet**.
 The Worker creates it ~2 seconds later. Using 202 is the **correct HTTP semantics** for async operations.
 
 ---
 
 ## Why This Architecture? Side-by-Side Comparison
 
-| Aspect | Synchronous (Traditional) | Async Event-Driven (Our POC) |
-|--------|---------------------------|------------------------------|
+| Aspect | Synchronous (Traditional) | Async Event-Driven (My POC) |
+|--------|---------------------------|-----------------------------|
 | **What happens on POST** | API validates -> writes to DB -> calculates units -> returns 201 | API validates -> publishes event -> returns 202 |
 | **API response time** | **Slow** — waits for DB + calculation (200-500ms) | **Instant** — just a queue publish (~15ms) |
 | **Coupling** | API directly depends on DB schema, pricing engine, etc. | API only knows about the message queue |
@@ -407,7 +407,7 @@ graph LR
 7. Open Dashboard Logs -> Show structured logs from the Worker
 ```
 
-### Example POST Request (what we send):
+### Example POST Request (what I send):
 
 ```json
 POST /api/investors
@@ -422,7 +422,7 @@ POST /api/investors
 }
 ```
 
-### Example 202 Response (what we get back immediately):
+### Example 202 Response (what I get back immediately):
 
 ```json
 HTTP 202 Accepted
@@ -575,10 +575,10 @@ stateDiagram-v2
 
 ## Deep Health Checks vs Standard Health Checks
 
-| | Standard Health Check | Deep Health Check (Our Custom) |
+| | Standard Health Check | Deep Health Check (My Custom) |
 |---|---|---|
-| **Endpoint** | `/health` (Aspire built-in) | `/api/investors/health-status` (we built this) |
-| **What it checks** | "Is the app process running and responsive?" | "Can we actually query Postgres? How many investors are in the DB? Is RabbitMQ queue active? How many consumers are connected?" |
+| **Endpoint** | `/health` (Aspire built-in) | `/api/investors/health-status` (I built this) |
+| **What it checks** | "Is the app process running and responsive?" | "Can I actually query Postgres? How many investors are in the DB? Is RabbitMQ queue active? How many consumers are connected?" |
 | **Response** | `Healthy` / `Unhealthy` (string) | Full JSON with per-dependency status, counts, and diagnostics |
 | **When to use** | Load balancer probes, container orchestrator | Debugging, monitoring dashboards, operational visibility |
 
@@ -611,7 +611,7 @@ GET /api/investors/health-status
 
 ---
 
-## What We're About to Do
+## What I'm About to Do
 
 ```
 1. Open the Resilience Demo page in the Web UI (/resilience)
@@ -701,9 +701,9 @@ Microsoft's official reference architecture for microservices:
 
 ---
 
-## Our POC — What Aspire Saved Us
+## My POC — What Aspire Saved Me
 
-| Without Aspire (What We'd Need) | With Aspire (What We Have) |
+| Without Aspire (What I'd Need) | With Aspire (What I Have) |
 |--------------------------------|---------------------------|
 | `docker-compose.yml` (~80 lines) | **AppHost.cs** (~40 lines) |
 | `.env` file with 15+ variables | **Nothing** (auto-injected) |
@@ -721,14 +721,14 @@ Microsoft's official reference architecture for microservices:
 
 ---
 
-## Gotchas We Discovered & Solved
+## Gotchas I Discovered & Solved
 
-| Problem | Why It Happened | How We Fixed It |
+| Problem | Why It Happened | How I Fixed It |
 |---------|----------------|-----------------|
 | **API crashed on startup** | `EnsureCreatedAsync()` ran before Postgres was fully accepting connections, even with `.WaitFor()` | Added **retry logic** — 5 attempts with 3-second delays around the DB initialization |
 | **DbContext injection failed in Worker** | Worker is a `BackgroundService` (singleton). DbContext is scoped. Can't inject scoped into singleton. | Used `IServiceScopeFactory` — create a new DI scope per message processed |
-| **RabbitMQ connection exhaustion** | Creating new `IConnection` per request would exhaust TCP connections | Aspire injects `IConnection` as singleton. We create lightweight `IChannel` per operation (channels are cheap, connections are expensive) |
-| **Port changes every restart** | Aspire allocates random ports dynamically | Use **service discovery**: `http://api-service` resolves automatically. Never hardcode ports. |
+| **RabbitMQ connection exhaustion** | Creating new `IConnection` per request would exhaust TCP connections | Aspire injects `IConnection` as singleton. I create lightweight `IChannel` per operation (channels are cheap, connections are expensive) |
+| **Port changes every restart** | Aspire allocates random ports dynamically | Used **service discovery**: `http://api-service` resolves automatically. Never hardcode ports. |
 | **Docker Desktop sleeping** | "Virtualization not detected" after Windows Resource Saver mode | `bcdedit /set hypervisorlaunchtype auto` + restart |
 
 ---
@@ -754,7 +754,7 @@ Microsoft's official reference architecture for microservices:
 
 ## What Aspire Gives You
 
-| Metric | Our POC Value |
+| Metric | My POC Value |
 |--------|--------------|
 | **Infrastructure code** | 40 lines of C# (AppHost.cs) |
 | **Configuration files** | 0 |
@@ -780,19 +780,6 @@ Microsoft's official reference architecture for microservices:
 ---
 
 # Q&A
-
----
-
-## Common Questions
-
-| Question | Answer |
-|----------|--------|
-| **"Is Aspire only for Azure?"** | No. Works with Docker, Podman, any container runtime. Deploy to AWS, GCP, or on-prem K8s. |
-| **"Do we need Aspire in production?"** | No. It's a development-time tool. Services are standard .NET apps — deploy them however you normally would. |
-| **"Can we add it to existing projects?"** | Yes, incrementally. Add an AppHost project, add `AddServiceDefaults()` to one service, wire it up. Migrate one service at a time. |
-| **"Performance overhead?"** | Minimal. OpenTelemetry: ~1-2ms/request. Redis caching actually improves performance. Dashboard is a separate process. |
-| **"Works with our existing containers?"** | Yes. Use `AddConnectionString()` to reference external services instead of `AddPostgres()` which spins up new ones. |
-| **"How does it handle scaling?"** | Aspire doesn't dictate scaling. In production, scale API and Worker instances independently via your orchestrator (K8s, etc.). |
 
 ---
 
